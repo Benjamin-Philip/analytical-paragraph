@@ -1,0 +1,23 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple bar chart with embedded data.",
+  "data": {
+    "values": [
+      {"Language": "Bengali", "Speakers": "3"},
+      {"Language": "Hindi", "Speakers": "3"},
+      {"Language": "Kannada", "Speakers": "5"},
+      {"Language": "Kashmiri", "Speakers": "1"},
+      {"Language": "Malayalam", "Speakers": "6"},
+      {"Language": "Punjabi", "Speakers": "1"},
+      {"Language": "Tamil", "Speakers": "4"},
+      {"Language": "Telugu", "Speakers": "1"},
+      {"Language": "Tulu", "Speakers": "1"},
+      {"Language": "Urdu", "Speakers": "1"}
+    ]
+  },
+  "mark": "arc",
+  "encoding": {
+    "color": {"field": "Language", "type": "nominal"},
+    "theta": {"field": "Speakers", "type": "quantitative"}
+  }
+}
