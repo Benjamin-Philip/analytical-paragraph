@@ -16,3 +16,4 @@ npm install
 rake
 ```
 
+This will generate the charts and the documents required.
