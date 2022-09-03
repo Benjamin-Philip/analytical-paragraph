@@ -3,10 +3,16 @@ require "rake/clean"
 Charts = ["piechart", "barchart"]
 Filetypes = ["svg", "png", "pdf"]
 
-multitask :default => Charts
+task :default => "tmp/analytical-paragraph.pdf"
 
 directory "tmp"
 CLOBBER.include("tmp")
+
+file "tmp/analytical-paragraph.pdf" => ["analytical-paragraph.md", "tmp/barchart.pdf"] do
+  sh "pandoc -f markdown -t pdf -o tmp/analytical-paragraph.pdf analytical-paragraph.md"
+end
+
+CLOBBER.include("tmp/analytical-paragraph.pdf")
 
 Charts.each do |chart|
   multitask chart => Filetypes.map { |filetype| "tmp/#{chart}.#{filetype}"}

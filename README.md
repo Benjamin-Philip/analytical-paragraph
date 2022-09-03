@@ -6,6 +6,9 @@ Install:
 
 - `npm`
 - `rake`
+- `pandoc`
+- `pdflatex`
+- `texlive`
 
 Then run:
 
